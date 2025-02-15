@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <title>Slow motion</title>
+  <style>
+
+    body {
+        font-family: "Public Sans", sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 1000px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    h2 {
+        font-weight: 700;
+        font-size: 51px;
+        text-align: center;
+        margin: 20px 20px 0px 20px;
+    }
+    .head p {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    .dropdown {
+        padding: 0px 15px;
+        border-bottom: 1px solid rgb(209, 209, 209);   
+    }
+    .dropdown-btn {
+        background-color: white;
+        color: black;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .dropdown-btn box-icon {
+        margin-top: 18px;
+    }
+    .dropdown-content {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease-out;
+        background-color: white;
+        padding-left: 10px;
+    }
+    .dropdown-content.show {
+        height: auto;
+    }
+    .rotated {
+        transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h2>Các câu hỏi thường gặp</h2>
+            <p>Dưới đây là những câu hỏi phổ biến thường được các bạn dành cho CLB.</p>  
+        </div>
+        
+        <div>
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <p>1. Lịch sử hình thành của CLB</p>
+                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
+                </button>
+                <div class="dropdown-content">
+                    
+                    <p><b>IT PTIT Club</b> là câu lạc bộ học thuật trực thuộc khoa CNTT 1 của Học viện Công nghệ Bưu chính Viễn thông. CLB được hình thành từ sự hợp nhất của 2 CLB ký cựu nhất trong Học viện là CLB SRC PTIT và một số thành viên của CLB lập trình Pro PTIT vào năm 2013. Sau 10 năm hợp nhất, IT PTIT đã đạt được rất nhiều thành công lớn.</p>
+                </div>
+            </div>            
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <p>2. Clb có chức năng gì?</p>
+                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
+                </button>
+                <div class="dropdown-content">
+                    <li>Gắn kết các thành viên CLB với Khoa CNTT và Học viện. Kết nối sinh viên với các cuộc thi và giới thiệu các cơ hội nghề nghiệp.</li>
+                    <li>Là môi trường học tập sáng tạo, năng động, giúp đỡ thành viên CLB đạt thành tích cao trong học tập, phát triển tốt các kỹ năng chuyên môn.</li>
+                    <br>
+                </div>
+            </div>  
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <p>3. CLB có nhiệm vụ gì?</p>
+                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
+                </button>
+                <div class="dropdown-content">
+                    <li>Hỗ trợ phát triển tư duy và kĩ năng lập trình.</li>
+                    <li>Phối hợp với khoa CNTT1 tổ chức các chương trình giao lưu, cuộc thi cho sinh viên.</li>
+                    <li>Tổ chức các hội thảo chuyên đề giúp các thành viên có cơ hội tiếp xúc với diễn giả uy tín.</li>
+                    <li>Tổ chức các hoạt động sự kiện, giải đấu giúp gắn kết các thành viên trong CLB.</li>
+                    <li>Mở rộng tìm kiếm và tham gia các cuộc thi có phạm vi ngoài Học viện.</li>
+                    <br>
+                </div>
+            </div>  
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <p>4. Không học CNTT có được thâm gia CLB không?</p>
+                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
+                </button>
+                <div class="dropdown-content">
+                    <p><b>IT PTIT Club</b> là mái nhà chung của những sinh viên có đam mê lập trình, đến từ các ngành học kỹ thuật trong trường như: Công nghệ thông tin, An toàn thông tin, Khoa học máy tính, Công nghệ Đa phương tiện,... Ngoài ra, các bạn theo học khối ngành khác cũng sẽ có cơ hội tham gia vào IT PTIT nếu có những kỹ năng về thiết kế đồ họa, truyền thông và tổ chức sự kiện.</p>
+                </div>
+            </div>  
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <p>5. Chưa biết gì về CNTT có được tham gia không?</p>
+                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
+                </button>
+                <div class="dropdown-content">
+                    <li>Trước khi là thành viên chính thức, các bạn sẽ được tham gia quá trình đào tạo, rèn luyện và kiểm tra năng lực. CLB sẽ đánh giá 1 “mầm non” có đủ điều kiện để trở thành thành viên chính thức hay không qua khả năng teamwork, sự nhiệt tình và kiến thức của các bạn, để từ đó đưa ra sự lựa chọn công bằng. Nói không với sự ưu tiên!</li>
+                    <li>Trước khi là thành viên chính thức, các bạn sẽ được tham gia quá trình đào tạo, rèn luyện và kiểm tra năng lực. CLB sẽ đánh giá 1 “mầm non” có đủ điều kiện để trở thành thành viên chính thức hay không qua khả năng teamwork, sự nhiệt tình và kiến thức của các bạn, để từ đó đưa ra sự lựa chọn công bằng. Nói không với sự ưu tiên!</li>
+                    <br>
+                </div>
+            </div>  
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <p>6. Sự khác biệt của CLB IT PTIT với các CLB CNTT khác?</p>
+                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
+                </button>
+                <div class="dropdown-content">
+                    <p>Mỗi CLB đều có những hành trình riêng. IT PTIT tập trung vào phát triển toàn diện. Các thành viên không chỉ cần có kỹ năng lập trình giỏi mà còn được đào tạo thêm về các kỹ năng mềm khác. IT PTIT là một trong những CLB hiếm hoi có sự liên kết mạnh mẽ với các doanh nghiệp CNTT.</p>
+                </div>
+            </div>  
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <p>7. CLB có bao nhiêu thành viên?</p>
+                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
+                </button>
+                <div class="dropdown-content">
+                    <p>Tính đến năm 2023, CLB đã có hơn 600 thành viên thuộc các ngành khối kỹ thuật của Học viện Công nghệ Bưu chính Viễn Thông. Trong đó, ngành CNTT chiếm đa số với hơn 500 thành viên.</p>
+                </div>
+            </div>  
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <p>8. Mô hình tổ chức CLB như thế nào?</p>
+                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
+                </button>
+                <div class="dropdown-content">
+                    <p>Khối Đào Tạo bao gồm <b>2 ban</b> và <b>4 team dự án</b>:</p>
+                    <li>Ban Cơ Bản: Có nhiệm vụ đào tạo các kiến thức căn bản về lập trình.</li>
+                    <li>Ban Thuật Toán: có nhiệm vụ đào tạo những thuật toán nâng cao cho các thành viên CLB và đi thi các cuộc thi lập trình thi đấu.</li>
+                    <li>Team dự án: Gồm 4 team: Web, Mobile, Game, AI.</li>
+                    <p>Khối Sự Kiện bao gồm <b>4 ban</b>:</p>
+                    <li>Ban Sự Kiện: có nhiệm vụ tổ chức các sự kiện, cuộc thi của CLB, của trường.</li>
+                    <li>Ban Truyền Thông: có nhiệm vụ quảng bá hình ảnh CLB cho mọi người.</li>
+                    <li>Ban Tài Chính: có nhiệm vụ quản lý tài chính của CLB.</li>
+                    <li>Ban Đối ngoại: là cầu nối của CLB với doanh nghiệp và tổ chức khác.</li>
+                    <br>
+                </div>
+            </div>  
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <p>9. Làm sao để tham gia CLB?</p>
+                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
+                </button>
+                <div class="dropdown-content">
+                    <p>Kế hoạch tuyển thành viên sẽ được cập nhật trên fanpage chính thức của CLB: <a href="https://www.facebook.com/ITPTIT">IT PTIT Club</a></p>
+                </div>
+            </div>  
+        </div>
+        <br><br>
+    </div>
+    <script>  
+        document.querySelectorAll('.dropdown-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            let icon = button.querySelector('.icon');
+            const content = this.nextElementSibling;
+            if (content.classList.contains('show')) {
+                content.style.height = `${content.scrollHeight}px`;
+                setTimeout(() => {
+                    content.style.height = '0';
+                }, 10);
+                content.classList.remove('show');
+                icon.classList.remove("rotated");
+            } else {
+                content.style.height = `${content.scrollHeight}px`;
+                content.classList.add('show');
+                setTimeout(() => {
+                    content.style.height = 'auto';
+                }, 500); 
+                icon.classList.add("rotated");
+            }
+        });
+    });
+    </script>
+</body>
+</html>
+
+
