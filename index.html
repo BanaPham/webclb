@@ -6,13 +6,11 @@
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <title>Slow motion</title>
   <style>
-
     body {
         font-family: "Public Sans", sans-serif;
         background-color: #f0f2f5;
         display: flex;
         justify-content: center;
-        padding: 20px;
     }
     .container {
         background: white;
@@ -22,16 +20,33 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         overflow: hidden;
     }
+    header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #b0c4b1; 
+        height: 60px; 
+        display: flex;
+        justify-content: end;
+    }
+    header box-icon {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        margin: 10px;
+    }
     h2 {
         font-weight: 700;
         font-size: 51px;
         text-align: center;
         margin: 20px 20px 0px 20px;
+        padding-top: 40px;
     }
     .head p {
         font-size: 1rem;
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 50px;
     }
     .dropdown {
         padding: 0px 15px;
@@ -63,15 +78,86 @@
     .rotated {
         transform: rotate(180deg);
     }
+    #nen {
+        height: 0;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: all 1s ease-in-out;
+    }
+    #nen.show {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(9, 9, 9, 0.3);
+        top: 0;
+        z-index: 99;
+    }
+    .menu {
+        height: 100%;
+        width: 250px; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: all 0.25s ease-in-out;
+        translate: 0 -9999px ;
+    }
+    .menu.show {
+        background-color: white;
+        top: 0;
+        left: 0;
+        padding-top: 50px;
+        z-index: 100;
+        translate: 0 0;
+    }
+    .menu button {
+        width: 100%;
+        background-color: white;
+        display: flex;
+        border: none;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+            background-color: #d4fad5;
+            color: green;
+        }
+    }
+    .menu box-icon {
+        margin: 16px 30px;
+    }
   </style>
 </head>
 <body>
+    <div id="nen">
+        <div class="menu">
+            <button>
+                <box-icon type='solid' name='home'></box-icon>
+                <p>Trang chủ</p>
+            </button>
+            <button>
+                <box-icon type='solid' name='graduation'></box-icon>
+                <p>Đào tạo</p>
+            </button>
+            <button>
+                <box-icon name='calendar-event'></box-icon>
+                <p>Hoạt động</p>
+            </button>
+            <button>
+                <box-icon type='solid' name='smile'></box-icon>
+                <p>Thành viên</p>
+            </button>
+        </div>
+    </div>
     <div class="container">
+        <header class="open">
+            <box-icon name='list-ul' ></box-icon>
+        </header>
         <div class="head">
             <h2>Các câu hỏi thường gặp</h2>
             <p>Dưới đây là những câu hỏi phổ biến thường được các bạn dành cho CLB.</p>  
         </div>
-        
         <div>
             <div class="dropdown">
                 <button class="dropdown-btn">
@@ -79,7 +165,6 @@
                     <box-icon class="icon" name='chevron-down'></box-icon class="icon">
                 </button>
                 <div class="dropdown-content">
-                    
                     <p><b>IT PTIT Club</b> là câu lạc bộ học thuật trực thuộc khoa CNTT 1 của Học viện Công nghệ Bưu chính Viễn thông. CLB được hình thành từ sự hợp nhất của 2 CLB ký cựu nhất trong Học viện là CLB SRC PTIT và một số thành viên của CLB lập trình Pro PTIT vào năm 2013. Sau 10 năm hợp nhất, IT PTIT đã đạt được rất nhiều thành công lớn.</p>
                 </div>
             </div>            
@@ -175,31 +260,61 @@
             </div>  
         </div>
         <br><br>
-    </div>
+    </div> 
     <script>  
         document.querySelectorAll('.dropdown-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            let icon = button.querySelector('.icon');
-            const content = this.nextElementSibling;
-            if (content.classList.contains('show')) {
-                content.style.height = `${content.scrollHeight}px`;
+            button.addEventListener('click', function() {
+                let icon = button.querySelector('.icon');
+                const content = this.nextElementSibling;
+                if (content.classList.contains('show')) {
+                    content.style.height = `${content.scrollHeight}px`;
+                    setTimeout(() => {
+                        content.style.height = '0';
+                    }, 10);
+                    content.classList.remove('show');
+                    icon.classList.remove("rotated");
+                } else {
+                    content.style.height = `${content.scrollHeight}px`;
+                    content.classList.add('show');
+                    setTimeout(() => {
+                        content.style.height = 'auto';
+                    }, 500); 
+                    icon.classList.add("rotated");
+                }
+            });
+        });
+        const tmp = document.querySelector('.open');
+        const menu = document.querySelector('.menu');
+        const nen = document.querySelector('#nen');
+        tmp.addEventListener("click", (event) => {
+            event.stopPropagation(); 
+            if (!menu.classList.contains('show') && !nen.classList.contains('show')) {
+                menu.classList.add('show');
+                nen.classList.add('show');
                 setTimeout(() => {
-                    content.style.height = '0';
-                }, 10);
-                content.classList.remove('show');
-                icon.classList.remove("rotated");
+                    menu.style.opacity = "1"; 
+                }, 100); 
             } else {
-                content.style.height = `${content.scrollHeight}px`;
-                content.classList.add('show');
                 setTimeout(() => {
-                    content.style.height = 'auto';
-                }, 500); 
-                icon.classList.add("rotated");
+                    menu.classList.remove('show');
+                    nen.classList.remove('show');
+                }, 100);
             }
         });
-    });
+        document.addEventListener("click", (event) => {
+            if (!menu.contains(event.target) && !tmp.contains(event.target)) {
+                menu.classList.remove('show');
+                nen.classList.remove('show');
+                isHidden = true;
+            }
+        });
     </script>
 </body>
 </html>
 
 
+<!-- 
+- ko loát lại trang --- 
+- popstate: (gạch chéo cuối cùng)
+loadRoad: tìm kiếm trong list cái phù hợp -> sửa lại DOM -> lấy ndung
+ -->
