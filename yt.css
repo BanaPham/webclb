@@ -1,0 +1,187 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    z-index: 99;
+}
+.navbar1 {
+    display: flex;
+    flex-direction: row;
+}
+.navbar1 box-icon {
+    width: 40px;
+    height: 40px;
+    margin: 10px 20px;
+    &:hover {
+        background-color: rgb(240, 238, 238);
+        border-radius: 50px;
+    }
+    cursor: pointer;
+}
+.navbar1 img {
+    height: 40px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+.navbar1 p {
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+.search {
+    display: flex;  
+    align-items: center; 
+    padding-top: 5px;
+}
+.button1 {
+    width: 500px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50px 0px 0px 50px;
+    border: 1px solid gray;
+    display: flex;  
+    align-items: center; 
+    justify-content: space-between;
+    padding: 5px 25px;
+} 
+.search input {
+    width: 400px;
+    border: none;
+    outline: none;
+}
+.button2 {
+    background-color: rgba(206, 203, 203, 0.386);
+    height: 40px;
+    border-radius: 0 50px 50px 0;
+    border: 1px solid gray;
+    width: 60px;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.nick {
+    display: flex;
+    flex-direction: row;
+}
+.tao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 80px;
+    border-radius: 50px;
+    border: none;
+    margin: 12px 5px;
+    &:hover {
+        background-color: rgb(232, 230, 230);
+    }
+    cursor: pointer;
+}
+.mic {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    border-radius: 50px;
+    border: none;
+    &:hover {
+        background-color: rgb(232, 230, 230);
+    }
+    cursor: pointer;
+}
+.bell {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50px;
+    border: none;
+    margin: 12px 5px;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(232, 230, 230);
+    }
+}
+.nick img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin: 12px 30px;
+    cursor: pointer;
+}
+.main {
+    width: 220px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+.menu {
+    border-bottom: 2px solid rgb(225, 225, 225);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+}
+.menu button {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(238, 237, 237, 0.4);
+        border-radius: 8px;
+    }
+}
+.menu button.show {
+    background-color: rgb(171, 171, 171);
+    font-weight: bold;
+}
+.menu a {
+    margin: 15px 20px;
+    text-decoration: none; 
+    color: black;
+}
+.menu p {
+    margin: 15px 20px;
+}
+.menu strong {
+    font-size: 18px;
+    line-height: 50px;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.content {
+    position: absolute;
+    top: 100px; 
+    left: 300px; 
+    padding: 10px 20%;
+}
+.trangchu {
+    height: 0;
+    overflow: hidden;
+    transition: all 0s ease-in-out;
+}
+.trangchu.show {
+    border-radius: 20px;
+    border: 2px solid rgb(229, 228, 228);
+    padding: 30px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.trangchu .button.show {
+    height: 40px;
+    width: 400px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(232, 230, 230);
+    }
+}
+
