@@ -130,13 +130,18 @@ header {
     font-weight: 400;
     cursor: pointer;
     &:hover {
-        background-color: rgba(238, 237, 237, 0.4);
+        background-color: rgba(216, 215, 215, 0.4);
         border-radius: 8px;
     }
 }
-.menu button.show {
-    background-color: rgb(171, 171, 171);
+.icon.show {
+    background-color: rgba(216, 215, 215, 0.4);
+    border-radius: 8px;
     font-weight: bold;
+    &:hover {
+        background-color: rgba(202, 202, 202, 0.5);
+        border-radius: 8px;
+    }
 }
 .menu a {
     margin: 15px 20px;
@@ -159,11 +164,6 @@ header {
     padding: 10px 20%;
 }
 .trangchu {
-    height: 0;
-    overflow: hidden;
-    transition: all 0s ease-in-out;
-}
-.trangchu.show {
     border-radius: 20px;
     border: 2px solid rgb(229, 228, 228);
     padding: 30px;
@@ -174,7 +174,7 @@ header {
     align-items: center;
     text-align: center;
 }
-.trangchu .button.show {
+.trangchu .button {
     height: 40px;
     width: 400px;
     border-radius: 50px;
@@ -184,4 +184,5 @@ header {
         background-color: rgb(232, 230, 230);
     }
 }
+
 
