@@ -5,6 +5,13 @@ function Trangchu()
     document.querySelector("#content").innerHTML = `
         <strong>Chế độ lưu danh sách đã xem đã tắt</strong>
     `
+    const items = document.querySelectorAll('.icon');
+    items.forEach(btn => {
+        btn.addEventListener('click', () => {
+            items.forEach(item => item.classList.remove('show'));
+            btn.classList.add('show');
+        });
+    });
 }
 
 function Shorts()
@@ -12,6 +19,13 @@ function Shorts()
     document.querySelector("#content").innerHTML = `
         <strong>Tạm ẩn</strong>
     `
+    const items = document.querySelectorAll('.icon');
+    items.forEach(btn => {
+        btn.addEventListener('click', () => {
+            items.forEach(item => item.classList.remove('show'));
+            btn.classList.add('show');
+        });
+    });
 }
 
 function Kenhdangky()
@@ -19,18 +33,14 @@ function Kenhdangky()
     document.getElementById("content").innerHTML = `
         <strong>Chưa có kênh đăng kí</strong>
     `
-}
-
-function Inid()
-{
-    document.getElementById("content").innerHTML = `
-        <h4>Bạn đang xem video có id là: <p id="id-container"></p></h4>
-    `
-    const path = window.location.pathname;
-    const parts = path.split('/'); 
-    const id = parts[parts.length - 1]; 
-    document.getElementById('id-container').textContent = id;
+    const items = document.querySelectorAll('.icon');
+    items.forEach(btn => {
+        btn.addEventListener('click', () => {
+            items.forEach(item => item.classList.remove('show'));
+            btn.classList.add('show');
+        });
+    });
 }
 
 export default Trangchu
-export {Shorts, Kenhdangky, Inid}
+export {Shorts, Kenhdangky}

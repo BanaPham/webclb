@@ -17,10 +17,6 @@ router.on("/feed", function(){
     Kenhdangky();
 });
 
-router.on("//watch/12123131", function(){
-    Inid();
-});
-
 router.resolve();
 
 export {router}
