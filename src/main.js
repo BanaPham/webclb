@@ -28,6 +28,10 @@ router.on("/feed", function(){
     Kenhdangky();
 });
 
+router.on("*", function(){
+    Inid();
+});
+
 router.resolve();
 
 export {router}

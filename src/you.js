@@ -5,7 +5,6 @@ function Trangchu()
     document.querySelector("#content").innerHTML = `
         <strong>Chế độ lưu danh sách đã xem đã tắt</strong>
     `
-    let IsTrangchu = true;
     const items = document.querySelectorAll('.icon');
     if (items.length > 0) {
         items[0].classList.add('show');
@@ -46,5 +45,20 @@ function Kenhdangky()
     });
 }
 
+function Inid()
+{
+    const items = document.querySelectorAll('.icon');
+    if (items.length > 0) {
+        items[0].classList.add('show');
+    }
+    document.getElementById("content").innerHTML = `
+        <h4>Bạn đang xem video có id là :<span id="id-container"></span></h4>
+    `
+    const path = window.location.pathname;
+    const parts = path.split('/'); 
+    const id = parts[parts.length - 1]; 
+    document.getElementById('id-container').textContent = id;
+}
+
 export default Trangchu
-export {Shorts, Kenhdangky}
+export {Shorts, Kenhdangky, Inid}
