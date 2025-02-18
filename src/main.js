@@ -1,9 +1,7 @@
 import Navigo from "navigo";
 import Trangchu, {Inid, Kenhdangky, Shorts} from "./you.js"
 
-const router = new Navigo("/", {
-    linksSelector: "a",
-});
+const router = new Navigo("/", {});
 
 document.addEventListener("click", (event) => {
     const button = event.target.closest("button"); 
@@ -28,9 +26,9 @@ router.on("/feed", function(){
     Kenhdangky();
 });
 
-router.notFound(() => {
-    Inid()
-});
+// router.notFound(() => {
+//     Inid()
+// });
 
 router.resolve();
 

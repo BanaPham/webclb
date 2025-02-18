@@ -45,9 +45,8 @@ function Kenhdangky()
     });
 }
 
-function Inid()
-{
-    document.getElementById("content").innerHTML = `
+function Inid() {
+    document.querySelector("#content").innerHTML = `
         <h4>Bạn đang xem video có id là :<span id="id-container"></span></h4>
     `
     const path = window.location.pathname;
