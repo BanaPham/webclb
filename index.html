@@ -1,320 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <title>Slow motion</title>
-  <style>
-    body {
-        font-family: "Public Sans", sans-serif;
-        background-color: #f0f2f5;
-        display: flex;
-        justify-content: center;
-    }
-    .container {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        width: 1000px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-    }
-    header {
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #b0c4b1; 
-        height: 60px; 
-        display: flex;
-        justify-content: end;
-    }
-    header box-icon {
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        margin: 10px;
-    }
-    h2 {
-        font-weight: 700;
-        font-size: 51px;
-        text-align: center;
-        margin: 20px 20px 0px 20px;
-        padding-top: 40px;
-    }
-    .head p {
-        font-size: 1rem;
-        text-align: center;
-        margin-bottom: 50px;
-    }
-    .dropdown {
-        padding: 0px 15px;
-        border-bottom: 1px solid rgb(209, 209, 209);   
-    }
-    .dropdown-btn {
-        background-color: white;
-        color: black;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        font-size: 18px;
-        display: flex;
-        justify-content: space-between;
-    }
-    .dropdown-btn box-icon {
-        margin-top: 18px;
-    }
-    .dropdown-content {
-        height: 0;
-        overflow: hidden;
-        transition: height 0.5s ease-out;
-        background-color: white;
-        padding-left: 10px;
-    }
-    .dropdown-content.show {
-        height: auto;
-    }
-    .rotated {
-        transform: rotate(180deg);
-    }
-    #nen {
-        height: 0;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        transition: all 1s ease-in-out;
-    }
-    #nen.show {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(9, 9, 9, 0.3);
-        top: 0;
-        z-index: 99;
-    }
-    .menu {
-        height: 100%;
-        width: 250px; 
-        position: absolute;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        transition: all 0.25s ease-in-out;
-        translate: 0 -9999px ;
-    }
-    .menu.show {
-        background-color: white;
-        top: 0;
-        left: 0;
-        padding-top: 50px;
-        z-index: 100;
-        translate: 0 0;
-    }
-    .menu button {
-        width: 100%;
-        background-color: white;
-        display: flex;
-        border: none;
-        font-size: 18px;
-        font-weight: 600;
-        cursor: pointer;
-        &:hover {
-            background-color: #d4fad5;
-            color: green;
-        }
-    }
-    .menu box-icon {
-        margin: 16px 30px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="nen">
+    <header>
+        <div class="navbar1">
+            <box-icon name='menu'></box-icon>
+            <img src="https://img.icons8.com/?size=100&id=qLVB1tIe9Ts9&format=png&color=000000" alt="">
+            <p>Youtube</p>
+            VN
+        </div>
+        <div class="search">
+            <button class="button1">
+                <input type="text" placeholder="Tìm kiếm">
+                <box-icon type='solid' name='keyboard'></box-icon>
+            </button>
+            <button class="button2">
+                <box-icon name='search-alt-2' ></box-icon>
+            </button>
+            <button class="mic">
+                <box-icon type='solid' name='microphone'></box-icon>
+            </button>
+        </div>
+        <div class="nick">
+            <button class="tao">
+                <box-icon name='plus'></box-icon>
+                <p>Tạo</p>
+            </button>
+            <button class="bell">
+                <box-icon name='bell'></box-icon>
+            </button>
+            <img src="/public/meo.jpg" alt="">
+        </div>
+    </header>
+    <nav class="main">
         <div class="menu">
-            <button>
+            <button class="icon">
                 <box-icon type='solid' name='home'></box-icon>
-                <p>Trang chủ</p>
+                <a href="/" data-navigo>Trang chủ</a>
             </button>
-            <button>
-                <box-icon type='solid' name='graduation'></box-icon>
-                <p>Đào tạo</p>
+            <button class="icon">
+                <box-icon type='solid' name='zap'></box-icon>
+                <a href="/shorts" data-navigo>Shorts</a>
             </button>
-            <button>
-                <box-icon name='calendar-event'></box-icon>
-                <p>Hoạt động</p>
-            </button>
-            <button>
-                <box-icon type='solid' name='smile'></box-icon>
-                <p>Thành viên</p>
+            <button class="icon">
+                <box-icon type='solid' name='videos'></box-icon>
+                <a href="/feed" data-navigo>Kênh đăng kí</a>
             </button>
         </div>
-    </div>
-    <div class="container">
-        <header class="open">
-            <box-icon name='list-ul' ></box-icon>
-        </header>
-        <div class="head">
-            <h2>Các câu hỏi thường gặp</h2>
-            <p>Dưới đây là những câu hỏi phổ biến thường được các bạn dành cho CLB.</p>  
+        <div class="menu"> 
+            <button>
+                <strong>Bạn</strong>
+                <box-icon name='chevron-right'></box-icon>
+            </button>
+            <button> 
+                <box-icon name='history'></box-icon>
+                <p>Video đã xem</p>
+            </button>
+            <button>
+                <box-icon name='left-indent'></box-icon>
+                <p>Danh sách phát</p>
+            </button>
+            <button>
+                <box-icon name='terminal'></box-icon>
+                <p>Video của bạn</p>
+            </button>
+            <button>
+                <box-icon name='time-five'></box-icon>
+                <p>Xem sau</p>
+            </button>
+            <button>
+                <box-icon name='like' ></box-icon>
+                <p>Video đã thích</p>
+            </button>
         </div>
-        <div>
-            <div class="dropdown">
-                <button class="dropdown-btn">
-                    <p>1. Lịch sử hình thành của CLB</p>
-                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
-                </button>
-                <div class="dropdown-content">
-                    <p><b>IT PTIT Club</b> là câu lạc bộ học thuật trực thuộc khoa CNTT 1 của Học viện Công nghệ Bưu chính Viễn thông. CLB được hình thành từ sự hợp nhất của 2 CLB ký cựu nhất trong Học viện là CLB SRC PTIT và một số thành viên của CLB lập trình Pro PTIT vào năm 2013. Sau 10 năm hợp nhất, IT PTIT đã đạt được rất nhiều thành công lớn.</p>
-                </div>
-            </div>            
-            <div class="dropdown">
-                <button class="dropdown-btn">
-                    <p>2. Clb có chức năng gì?</p>
-                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
-                </button>
-                <div class="dropdown-content">
-                    <li>Gắn kết các thành viên CLB với Khoa CNTT và Học viện. Kết nối sinh viên với các cuộc thi và giới thiệu các cơ hội nghề nghiệp.</li>
-                    <li>Là môi trường học tập sáng tạo, năng động, giúp đỡ thành viên CLB đạt thành tích cao trong học tập, phát triển tốt các kỹ năng chuyên môn.</li>
-                    <br>
-                </div>
-            </div>  
-            <div class="dropdown">
-                <button class="dropdown-btn">
-                    <p>3. CLB có nhiệm vụ gì?</p>
-                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
-                </button>
-                <div class="dropdown-content">
-                    <li>Hỗ trợ phát triển tư duy và kĩ năng lập trình.</li>
-                    <li>Phối hợp với khoa CNTT1 tổ chức các chương trình giao lưu, cuộc thi cho sinh viên.</li>
-                    <li>Tổ chức các hội thảo chuyên đề giúp các thành viên có cơ hội tiếp xúc với diễn giả uy tín.</li>
-                    <li>Tổ chức các hoạt động sự kiện, giải đấu giúp gắn kết các thành viên trong CLB.</li>
-                    <li>Mở rộng tìm kiếm và tham gia các cuộc thi có phạm vi ngoài Học viện.</li>
-                    <br>
-                </div>
-            </div>  
-            <div class="dropdown">
-                <button class="dropdown-btn">
-                    <p>4. Không học CNTT có được thâm gia CLB không?</p>
-                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
-                </button>
-                <div class="dropdown-content">
-                    <p><b>IT PTIT Club</b> là mái nhà chung của những sinh viên có đam mê lập trình, đến từ các ngành học kỹ thuật trong trường như: Công nghệ thông tin, An toàn thông tin, Khoa học máy tính, Công nghệ Đa phương tiện,... Ngoài ra, các bạn theo học khối ngành khác cũng sẽ có cơ hội tham gia vào IT PTIT nếu có những kỹ năng về thiết kế đồ họa, truyền thông và tổ chức sự kiện.</p>
-                </div>
-            </div>  
-            <div class="dropdown">
-                <button class="dropdown-btn">
-                    <p>5. Chưa biết gì về CNTT có được tham gia không?</p>
-                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
-                </button>
-                <div class="dropdown-content">
-                    <li>Trước khi là thành viên chính thức, các bạn sẽ được tham gia quá trình đào tạo, rèn luyện và kiểm tra năng lực. CLB sẽ đánh giá 1 “mầm non” có đủ điều kiện để trở thành thành viên chính thức hay không qua khả năng teamwork, sự nhiệt tình và kiến thức của các bạn, để từ đó đưa ra sự lựa chọn công bằng. Nói không với sự ưu tiên!</li>
-                    <li>Trước khi là thành viên chính thức, các bạn sẽ được tham gia quá trình đào tạo, rèn luyện và kiểm tra năng lực. CLB sẽ đánh giá 1 “mầm non” có đủ điều kiện để trở thành thành viên chính thức hay không qua khả năng teamwork, sự nhiệt tình và kiến thức của các bạn, để từ đó đưa ra sự lựa chọn công bằng. Nói không với sự ưu tiên!</li>
-                    <br>
-                </div>
-            </div>  
-            <div class="dropdown">
-                <button class="dropdown-btn">
-                    <p>6. Sự khác biệt của CLB IT PTIT với các CLB CNTT khác?</p>
-                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
-                </button>
-                <div class="dropdown-content">
-                    <p>Mỗi CLB đều có những hành trình riêng. IT PTIT tập trung vào phát triển toàn diện. Các thành viên không chỉ cần có kỹ năng lập trình giỏi mà còn được đào tạo thêm về các kỹ năng mềm khác. IT PTIT là một trong những CLB hiếm hoi có sự liên kết mạnh mẽ với các doanh nghiệp CNTT.</p>
-                </div>
-            </div>  
-            <div class="dropdown">
-                <button class="dropdown-btn">
-                    <p>7. CLB có bao nhiêu thành viên?</p>
-                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
-                </button>
-                <div class="dropdown-content">
-                    <p>Tính đến năm 2023, CLB đã có hơn 600 thành viên thuộc các ngành khối kỹ thuật của Học viện Công nghệ Bưu chính Viễn Thông. Trong đó, ngành CNTT chiếm đa số với hơn 500 thành viên.</p>
-                </div>
-            </div>  
-            <div class="dropdown">
-                <button class="dropdown-btn">
-                    <p>8. Mô hình tổ chức CLB như thế nào?</p>
-                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
-                </button>
-                <div class="dropdown-content">
-                    <p>Khối Đào Tạo bao gồm <b>2 ban</b> và <b>4 team dự án</b>:</p>
-                    <li>Ban Cơ Bản: Có nhiệm vụ đào tạo các kiến thức căn bản về lập trình.</li>
-                    <li>Ban Thuật Toán: có nhiệm vụ đào tạo những thuật toán nâng cao cho các thành viên CLB và đi thi các cuộc thi lập trình thi đấu.</li>
-                    <li>Team dự án: Gồm 4 team: Web, Mobile, Game, AI.</li>
-                    <p>Khối Sự Kiện bao gồm <b>4 ban</b>:</p>
-                    <li>Ban Sự Kiện: có nhiệm vụ tổ chức các sự kiện, cuộc thi của CLB, của trường.</li>
-                    <li>Ban Truyền Thông: có nhiệm vụ quảng bá hình ảnh CLB cho mọi người.</li>
-                    <li>Ban Tài Chính: có nhiệm vụ quản lý tài chính của CLB.</li>
-                    <li>Ban Đối ngoại: là cầu nối của CLB với doanh nghiệp và tổ chức khác.</li>
-                    <br>
-                </div>
-            </div>  
-            <div class="dropdown">
-                <button class="dropdown-btn">
-                    <p>9. Làm sao để tham gia CLB?</p>
-                    <box-icon class="icon" name='chevron-down'></box-icon class="icon">
-                </button>
-                <div class="dropdown-content">
-                    <p>Kế hoạch tuyển thành viên sẽ được cập nhật trên fanpage chính thức của CLB: <a href="https://www.facebook.com/ITPTIT">IT PTIT Club</a></p>
-                </div>
-            </div>  
+        <div class="menu">
+            <strong>Kênh đăng kí</strong>
+            <button>
+                <box-icon name='list-ul'></box-icon>
+                <p>Tất cả kênh đăng kí</p>
+            </button>
         </div>
-        <br><br>
-    </div> 
-    <script>  
-        document.querySelectorAll('.dropdown-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                let icon = button.querySelector('.icon');
-                const content = this.nextElementSibling;
-                if (content.classList.contains('show')) {
-                    content.style.height = `${content.scrollHeight}px`;
-                    setTimeout(() => {
-                        content.style.height = '0';
-                    }, 10);
-                    content.classList.remove('show');
-                    icon.classList.remove("rotated");
-                } else {
-                    content.style.height = `${content.scrollHeight}px`;
-                    content.classList.add('show');
-                    setTimeout(() => {
-                        content.style.height = 'auto';
-                    }, 500); 
-                    icon.classList.add("rotated");
-                }
-            });
-        });
-        const tmp = document.querySelector('.open');
-        const menu = document.querySelector('.menu');
-        const nen = document.querySelector('#nen');
-        tmp.addEventListener("click", (event) => {
-            event.stopPropagation(); 
-            if (!menu.classList.contains('show') && !nen.classList.contains('show')) {
-                menu.classList.add('show');
-                nen.classList.add('show');
-                setTimeout(() => {
-                    menu.style.opacity = "1"; 
-                }, 100); 
-            } else {
-                setTimeout(() => {
-                    menu.classList.remove('show');
-                    nen.classList.remove('show');
-                }, 100);
-            }
-        });
-        document.addEventListener("click", (event) => {
-            if (!menu.contains(event.target) && !tmp.contains(event.target)) {
-                menu.classList.remove('show');
-                nen.classList.remove('show');
-                isHidden = true;
-            }
-        });
-    </script>
+        <div class="menu">
+            <strong>Khám phá</strong>
+            <button>
+                <box-icon name='hot' type='solid' ></box-icon>
+                <p>Thịnh hành</p>
+            </button>
+            <button>
+                <box-icon name='music' type='solid' ></box-icon>
+                <p>Âm nhạc</p>
+            </button>
+        </div>
+    </nav>
+    <div id="content"></div>
+
+    <script src="/src/main.js" type="module"></script>
 </body>
 </html>
-
-
-<!-- 
-- ko loát lại trang --- 
-- popstate: (gạch chéo cuối cùng)
-loadRoad: tìm kiếm trong list cái phù hợp -> sửa lại DOM -> lấy ndung
- -->

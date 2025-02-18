@@ -163,26 +163,3 @@ header {
     left: 300px; 
     padding: 10px 20%;
 }
-.trangchu {
-    border-radius: 20px;
-    border: 2px solid rgb(229, 228, 228);
-    padding: 30px;
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.trangchu .button {
-    height: 40px;
-    width: 400px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    &:hover {
-        background-color: rgb(232, 230, 230);
-    }
-}
-
-
