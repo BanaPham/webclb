@@ -98,7 +98,15 @@
             </button>
         </div>
     </nav>
-    <div id="content"></div>
+    <div id="content">
+        <h4>Bạn đang xem video có id là :<span id="id-container"></span></h4>
+    </div>
     <script src="/src/main.js" type="module"></script>
+    <script>
+        const path = window.location.pathname;
+        const parts = path.split('/'); 
+        const id = parts[parts.length - 1]; 
+        document.getElementById('id-container').textContent = id;
+    </script>
 </body>
 </html>
