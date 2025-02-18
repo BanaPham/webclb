@@ -2,6 +2,7 @@ header {
     display: flex;
     justify-content: space-between;
     z-index: 99;
+    position: fixed;
 }
 .navbar1 {
     display: flex;
@@ -114,6 +115,7 @@ header {
     display: flex;
     flex-direction: column;
     z-index: 10;
+    position: fixed;
 }
 .menu {
     border-bottom: 2px solid rgb(225, 225, 225);
