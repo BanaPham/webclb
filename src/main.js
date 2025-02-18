@@ -26,8 +26,8 @@ router.on("/feed", function(){
     Kenhdangky()
 });
 
-router.on("/watch", function(){
-    Inid()
+router.on("/watch/:id", function(diachi){
+    Inid(diachi.id)
 });
 
 router.resolve();
