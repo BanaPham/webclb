@@ -21,5 +21,16 @@ function Kenhdangky()
     `
 }
 
+function Inid()
+{
+    document.getElementById("content").innerHTML = `
+        <h4>Bạn đang xem video có id là: <p id="id-container"></p></h4>
+    `
+    const path = window.location.pathname;
+    const parts = path.split('/'); 
+    const id = parts[parts.length - 1]; 
+    document.getElementById('id-container').textContent = id;
+}
+
 export default Trangchu
-export {Shorts, Kenhdangky}
+export {Shorts, Kenhdangky, Inid}

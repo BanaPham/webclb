@@ -1,5 +1,5 @@
 import Navigo from "navigo";
-import Trangchu, {Kenhdangky, Shorts} from "./you.js"
+import Trangchu, {Inid, Kenhdangky, Shorts} from "./you.js"
 
 const router = new Navigo("/", {
     linksSelector: "a",
@@ -15,6 +15,10 @@ router.on("/shorts", function(){
 
 router.on("/feed", function(){
     Kenhdangky();
+});
+
+router.on("//watch/12123131", function(){
+    Inid();
 });
 
 router.resolve();
