@@ -28,8 +28,8 @@ router.on("/feed", function(){
     Kenhdangky();
 });
 
-router.on("*", function(){
-    Inid();
+router.notFound(() => {
+    Inid()
 });
 
 router.resolve();

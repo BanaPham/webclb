@@ -47,10 +47,6 @@ function Kenhdangky()
 
 function Inid()
 {
-    const items = document.querySelectorAll('.icon');
-    if (items.length > 0) {
-        items[0].classList.add('show');
-    }
     document.getElementById("content").innerHTML = `
         <h4>Bạn đang xem video có id là :<span id="id-container"></span></h4>
     `
