@@ -2,7 +2,7 @@ import Navigo from "navigo";
 import Trangchu, {Inid, Kenhdangky, Shorts} from "./you.js"
 
 const router = new Navigo("/", {
-    linksSelector: "a",
+    linksSelector: "button",
 });
 
 router.on("/", function(){
