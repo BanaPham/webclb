@@ -48,10 +48,15 @@ function Kenhdangky()
 function Inid() {
     document.querySelector("#content").innerHTML = `
         <h4>Bạn đang xem video có id là :<span id="id-container"></span></h4>
+        <button id="Saochep">Click</button>
     `
     const path = window.location.pathname;
     const parts = path.split('/'); 
     const id = parts[parts.length - 1]; 
+    document.getElementById("Saochep").addEventListener("click", function() {
+        navigator.clipboard.writeText(id)
+            .then(() => alert("Đã sao chép ID: " + id))
+    });
     document.getElementById('id-container').textContent = id;
 }
 

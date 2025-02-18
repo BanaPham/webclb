@@ -16,22 +16,19 @@ document.addEventListener("click", (event) => {
 
 router.on("/", function(){
     Trangchu()
-    Inid()
 });
 
 router.on("/shorts", function(){
     Shorts()
-    Inid()
 });
 
 router.on("/feed", function(){
     Kenhdangky()
-    Inid()
 });
 
-// router.notFound(() => {
-//     Inid()
-// });
+router.on("/watch", function(){
+    Inid()
+});
 
 router.resolve();
 
