@@ -72,5 +72,14 @@ function Videodaxem()
     });
 }
 
+function Inid(params)
+{
+    document.getElementById("content").innerHTML = `
+        <h4 id="display-id"></h4>
+    `  
+    const displayElement = document.getElementById("display-id");
+    displayElement.textContent = "Bạn đang xem ảnh có id là: " + id;
+}
+
 export default Trangchu
-export {Shorts, Kenhdangky, Videodaxem}
+export {Shorts, Kenhdangky, Videodaxem, Inid}

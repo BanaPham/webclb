@@ -1,5 +1,5 @@
 import Navigo from "navigo";
-import Trangchu, {Kenhdangky, Shorts, Videodaxem} from "./you.js"
+import Trangchu, {Kenhdangky, Shorts, Videodaxem, Inid} from "./you.js"
 
 const router = new Navigo('/');
 
@@ -28,6 +28,10 @@ router.on("/feed", function(){
 
 router.on("/history", function(){
     Videodaxem()
+});
+
+router.on('/watch/:id', (params) => {
+    Inid(params.id);
 });
 
 router.resolve();
