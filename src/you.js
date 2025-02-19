@@ -35,8 +35,20 @@ function Shorts()
 function Kenhdangky()
 {
     document.getElementById("content").innerHTML = `
-        <strong>Chưa có kênh đăng kí</strong>
-    `
+        <img class="Anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0510">
+        <img class="Anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0511">
+        <img class="Anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0512">
+        <img class="Anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0513">
+    `  
+    const idAnh = document.querySelectorAll(".Anh");
+    idAnh.forEach(({id}) => {
+        const id = this.getAttribute("data-id");
+        let idSelector = '#' + id;
+        document.querySelector(idSelector).addEventListener('click', () => {
+            router.navigate('/watch/' + id);
+        });
+    });
+    
     const items = document.querySelectorAll('.icon');
     items.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -62,7 +74,7 @@ function Videodaxem()
             router.navigate('/watch/' + id);
         });
     });
-    
+
     const items = document.querySelectorAll('.icon');
     items.forEach(btn => {
         btn.addEventListener('click', () => {
