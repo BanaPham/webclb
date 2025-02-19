@@ -3,11 +3,11 @@ import {router} from './main.js';
 function Trangchu()
 {
     document.querySelector("#content").innerHTML = `
-        <img class="video" src="/public/meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px;">
+        <img class="video" src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px;">
         <button class="Saochep"><strong>Click</strong></button>
         <br></br>
-        <img class="video" src="/public/meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px;">
-        <img class="video" src="/public/meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px;">
+        <img class="video" src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px;">
+        <img class="video" src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px;">
     
     `
     document.querySelectorAll(".video").forEach(img => {
