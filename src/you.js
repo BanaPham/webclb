@@ -1,4 +1,5 @@
 import {router} from './main.js';
+import { videoList } from './content.js';
 
 function Trangchu()
 {
@@ -46,5 +47,24 @@ function Kenhdangky()
     });
 }
 
+function Videodaxem()
+{ 
+    videoList.forEach(({id}) => {
+        let idSelect = '#' + id;
+        document.querySelector(idSelect).addEventListener('click', () => {
+            router.navigate('/watch/' + id);
+        });
+    });
+}
+
+function Inid(params)
+{
+    let videoID = params.data.id;
+    let currentVideo = videoList.filter((vid) => vid.id === videoID);
+    if (currentVideo.length) {
+        videoID = '(Bạn đang xem video có ID là ' + videoID + ')';
+    }
+}
+
 export default Trangchu
-export {Shorts, Kenhdangky}
+export {Shorts, Kenhdangky, Videodaxem,Inid}
