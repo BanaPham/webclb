@@ -4,11 +4,14 @@ function Trangchu()
 {
     document.querySelector("#content").innerHTML = `
         <button class="video" style="border: none; background-color: white;">
-            <img src="/public/meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
+            <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
         </button>
         <button class="Saochep"><strong>Click</strong></button>
         <button class="video" style="border: none; background-color: white;">
-            <img src="/public/meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
+            <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
+        </button>
+        <button class="video" style="border: none; background-color: white;">
+            <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
         </button>
     
     `
