@@ -15,10 +15,6 @@ router.on("/feed", function(){
     Kenhdangky()
 });
 
-// router.on('/watch/:id', (params) => {
-//     Inid(params);
-// });
-
 router.resolve();
 
 export {router}
