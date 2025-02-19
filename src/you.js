@@ -6,7 +6,7 @@ function NoiDung()
         <button class="video" style="border: none; background-color: white;">
             <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
         </button>
-        <button class="Saochep"><strong>Click</strong></button>
+        <button class="Saochep"style="cursor: pointer;"><strong>Click</strong></button>
         <button class="video" style="border: none; background-color: white;">
             <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
         </button>
@@ -23,7 +23,19 @@ function NoiDung()
 
 function Trangchu()
 {
-    NoiDung()
+    document.querySelector("#content").innerHTML = `
+        <button class="video" style="border: none; background-color: white;">
+            <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
+        </button>
+        <button class="Saochep"style="cursor: pointer;"><strong>Click</strong></button>
+        <button class="video" style="border: none; background-color: white;">
+            <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
+        </button>
+        <button class="video" style="border: none; background-color: white;">
+            <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
+        </button>
+    
+    `
     const items = document.querySelectorAll('.icon');
     if (items.length > 0) {
         items[0].classList.add('show');
