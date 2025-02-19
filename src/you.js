@@ -1,6 +1,6 @@
 import {router} from './main.js';
 
-function NoiDung()
+function Trangchu()
 {
     document.querySelector("#content").innerHTML = `
         <button class="video" style="border: none; background-color: white;">
@@ -19,23 +19,6 @@ function NoiDung()
         let videoID = document.querySelector(".video").getAttribute("data-id");
         navigator.clipboard.writeText(videoID);
     });
-}
-
-function Trangchu()
-{
-    document.querySelector("#content").innerHTML = `
-        <button class="video" style="border: none; background-color: white;">
-            <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
-        </button>
-        <button class="Saochep"style="cursor: pointer;"><strong>Click</strong></button>
-        <button class="video" style="border: none; background-color: white;">
-            <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
-        </button>
-        <button class="video" style="border: none; background-color: white;">
-            <img src="meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px; cursor: pointer;">
-        </button>
-    
-    `
     const items = document.querySelectorAll('.icon');
     if (items.length > 0) {
         items[0].classList.add('show');
@@ -76,15 +59,15 @@ function Kenhdangky()
     });
 }
 
-function Inid(params) {
-    NoiDung()
-    document.querySelectorAll(".video").forEach(img => {
-        img.addEventListener("click", function () {
-            let videoID = this.getAttribute("data-id");
-            router.navigate(`/watch/${videoID}`); 
-        });
-    });
-}
+// function Inid(params) {
+//     NoiDung()
+//     document.querySelectorAll(".video").forEach(img => {
+//         img.addEventListener("click", function () {
+//             let videoID = this.getAttribute("data-id");
+//             router.navigate(`/watch/${videoID}`); 
+//         });
+//     });
+// }
 
 export default Trangchu
-export {Shorts, Kenhdangky, Inid}
+export {Shorts, Kenhdangky}
