@@ -51,19 +51,28 @@ function Videodaxem()
 {
     document.getElementById("content").innerHTML = `
         <h4 id="display-id"></h4>
+        <button id="detail-button" style="display: none;">Click</button>
         <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="meo.jpg" alt="" data-id="0510">
         <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="meo.jpg" alt="" data-id="0511">
         <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="meo.jpg" alt="" data-id="0512">
         <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="meo.jpg" alt="" data-id="0513">
     `  
+    const detailButton = document.getElementById("detail-button");
     const idAnh = document.querySelectorAll(".anh");
     idAnh.forEach((element) => {
         const id = element.getAttribute("data-id");
         element.addEventListener("click", () => {
             router.navigate('/watch/' + id); 
             const displayElement = document.getElementById("display-id");
-             displayElement.textContent = "Bạn đang xem ảnh có id là: " + id;
+            displayElement.textContent = "Bạn đang xem ảnh có id là: " + id;
+            detailButton.style.display = "block";
+            detailButton.setAttribute("data-id", id);
         });
+    });
+    detailButton.addEventListener("click", async () => {
+        const id = detailButton.getAttribute("data-id");
+        await navigator.clipboard.writeText(id);
+        alert("ID " + id + " đã được sao chép vào clipboard!");
     });
 
     const items = document.querySelectorAll('.icon');
