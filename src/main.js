@@ -30,9 +30,9 @@ router.on("/history", function(){
     Videodaxem()
 });
 
-router.on('/watch/:id', (params) => {
-    Inid(params.id);
-});
+// router.on('/watch/:id', (params) => {
+//     Inid(params.id);
+// });
 
 router.resolve();
 
