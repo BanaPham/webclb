@@ -99,6 +99,17 @@
         </div>
     </nav>
     <div id="content"></div>
+    <div class="scroll">
+        <button id="scrollToTopBtn">
+            <box-icon type='solid' name='caret-up-circle'></box-icon>
+        </button>
+    </div>
     <script src="/src/main.js" type="module"></script>
+    <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        scrollToTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
 </body>
 </html>

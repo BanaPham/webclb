@@ -3,8 +3,23 @@ import {router} from './main.js';
 function Trangchu()
 {
     document.querySelector("#content").innerHTML = `
-        <strong>Chế độ lưu danh sách đã xem đã tắt</strong>
+        <img class="video" src="/public/meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px;">
+        <button class="Saochep"><strong>Click</strong></button>
+        <br></br>
+        <img class="video" src="/public/meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px;">
+        <img class="video" src="/public/meo.jpg" data-id="051004" style="border-radius: 10px; width: 500px; height: 400px; margin: 20px;">
+    
     `
+    document.querySelectorAll(".video").forEach(img => {
+        img.addEventListener("click", function () {
+            let videoID = this.getAttribute("data-id");
+            router.navigate(`/watch/${videoID}`); 
+        });
+    });
+    document.getElementById("Saochep").addEventListener("click", function () {
+        let videoID = document.querySelector(".video").getAttribute("data-id");
+        navigator.clipboard.writeText(videoID);
+    });
     const items = document.querySelectorAll('.icon');
     if (items.length > 0) {
         items[0].classList.add('show');
@@ -45,19 +60,10 @@ function Kenhdangky()
     });
 }
 
-function Inid(address) {
-    document.querySelector("#content").innerHTML = `
-        <h4>Bạn đang xem video có id là :<span id="id-container"></span></h4>
-        <button id="Saochep">Click</button>
-    `
-    const path = window.location.pathname;
-    const parts = path.split('/'); 
-    const id = parts[parts.length - 1]; 
-    document.getElementById("Saochep").addEventListener("click", function() {
-        navigator.clipboard.writeText(id)
-            .then(() => alert("Đã sao chép ID: " + id))
-    });
-    document.getElementById('id-container').textContent = address;
+function Inid(params) {
+    if (document.querySelector("#content")) {
+        let videoID = params.data.id;
+    }
 }
 
 export default Trangchu
