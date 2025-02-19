@@ -26,7 +26,7 @@ router.on("/feed", function(){
     Kenhdangky()
 });
 
-router.on('/feed/:id', ({data}) => {
+router.on('/watch/:id', ({data}) => {
     const videoID = data.id; 
     document.querySelector("#content").innerHTML = `
         <strong class="text-2xl font-bold">Bạn đang xem video có ID là ${videoID}</strong>
