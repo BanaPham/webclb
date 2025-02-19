@@ -1,6 +1,6 @@
 import {router} from './main.js';
 
-function Trangchu()
+function NoiDung()
 {
     document.querySelector("#content").innerHTML = `
         <button class="video" style="border: none; background-color: white;">
@@ -15,16 +15,15 @@ function Trangchu()
         </button>
     
     `
-    document.querySelectorAll(".video").forEach(img => {
-        img.addEventListener("click", function () {
-            let videoID = this.getAttribute("data-id");
-            router.navigate(`/watch/${videoID}`); 
-        });
-    });
     document.getElementById("Saochep").addEventListener("click", function () {
         let videoID = document.querySelector(".video").getAttribute("data-id");
         navigator.clipboard.writeText(videoID);
     });
+}
+
+function Trangchu()
+{
+    NoiDung()
     const items = document.querySelectorAll('.icon');
     if (items.length > 0) {
         items[0].classList.add('show');
@@ -66,9 +65,13 @@ function Kenhdangky()
 }
 
 function Inid(params) {
-    if (document.querySelector("#content")) {
-        let videoID = params.data.id;
-    }
+    NoiDung()
+    document.querySelectorAll(".video").forEach(img => {
+        img.addEventListener("click", function () {
+            let videoID = this.getAttribute("data-id");
+            router.navigate(`/watch/${videoID}`); 
+        });
+    });
 }
 
 export default Trangchu
