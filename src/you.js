@@ -50,6 +50,7 @@ function Kenhdangky()
 function Videodaxem()
 {
     document.getElementById("content").innerHTML = `
+        <h4 id="display-id"></h4>
         <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="meo.jpg" alt="" data-id="0510">
         <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="meo.jpg" alt="" data-id="0511">
         <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="meo.jpg" alt="" data-id="0512">
@@ -60,6 +61,8 @@ function Videodaxem()
         const id = element.getAttribute("data-id");
         element.addEventListener("click", () => {
             router.navigate('/watch/' + id); 
+            const displayElement = document.getElementById("display-id");
+             displayElement.textContent = "Bạn đang xem ảnh có id là: " + id;
         });
     });
 
@@ -72,14 +75,5 @@ function Videodaxem()
     });
 }
 
-function Inid(params)
-{
-    document.getElementById("content").innerHTML = `
-        <h4 id="display-id"></h4>
-    `  
-    const displayElement = document.getElementById("display-id");
-    displayElement.textContent = "Bạn đang xem ảnh có id là: " + id;
-}
-
 export default Trangchu
-export {Shorts, Kenhdangky, Videodaxem, Inid}
+export {Shorts, Kenhdangky, Videodaxem}
