@@ -1,4 +1,4 @@
-const videoList = [
+export const videoList = [
     {
         id: '171105',
         avt: 'meo.jpg',

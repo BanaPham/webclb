@@ -1,5 +1,5 @@
 import {router} from './main.js';
-import { videoList } from './content.js';
+import {videoList} from './content.js';
 
 function Trangchu()
 {
@@ -66,6 +66,16 @@ function Videodaxem()
 
 function Inid(params)
 {
+    // document.getElementById("content").innerHTML = `
+    //     <button id="copyButton"><strong>Click</strong></button>>
+    // `
+    // document.getElementById("copyButton").addEventListener("click", function() {
+    //     const path = window.location.pathname;
+    //     const parts = path.split("/");
+    //     const id = parts[parts.length - 1];
+    //     navigator.clipboard.writeText(id)
+    //         .then(() => alert("Đã sao chép ID: " + id))
+    // });
     let videoID = params.data.id;
     let currentVideo = videoList.filter((vid) => vid.id === videoID);
     if (currentVideo.length) {
