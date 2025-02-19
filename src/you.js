@@ -55,6 +55,13 @@ function Videodaxem()
             router.navigate('/watch/' + id);
         });
     });
+    const items = document.querySelectorAll('.icon');
+    items.forEach(btn => {
+        btn.addEventListener('click', () => {
+            items.forEach(item => item.classList.remove('show'));
+            btn.classList.add('show');
+        });
+    });
 }
 
 function Inid(params)
