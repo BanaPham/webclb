@@ -1,5 +1,4 @@
 import {router} from './main.js';
-import {videoList} from './content.js';
 
 function Trangchu()
 {
@@ -47,41 +46,5 @@ function Kenhdangky()
     });
 }
 
-function Videodaxem()
-{ 
-    videoList.forEach(({id}) => {
-        let idSelect = '#' + id;
-        document.querySelector(idSelect).addEventListener('click', () => {
-            router.navigate('/watch/' + id);
-        });
-    });
-    const items = document.querySelectorAll('.icon');
-    items.forEach(btn => {
-        btn.addEventListener('click', () => {
-            items.forEach(item => item.classList.remove('show'));
-            btn.classList.add('show');
-        });
-    });
-}
-
-function Inid(params)
-{
-    // document.getElementById("content").innerHTML = `
-    //     <button id="copyButton"><strong>Click</strong></button>>
-    // `
-    // document.getElementById("copyButton").addEventListener("click", function() {
-    //     const path = window.location.pathname;
-    //     const parts = path.split("/");
-    //     const id = parts[parts.length - 1];
-    //     navigator.clipboard.writeText(id)
-    //         .then(() => alert("Đã sao chép ID: " + id))
-    // });
-    let videoID = params.data.id;
-    let currentVideo = videoList.filter((vid) => vid.id === videoID);
-    if (currentVideo.length) {
-        videoID = '(Bạn đang xem video có ID là ' + videoID + ')';
-    }
-}
-
 export default Trangchu
-export {Shorts, Kenhdangky, Videodaxem,Inid}
+export {Shorts, Kenhdangky}
