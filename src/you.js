@@ -62,6 +62,7 @@ function Videodaxem()
             router.navigate('/watch/' + id);
         });
     });
+    
     const items = document.querySelectorAll('.icon');
     items.forEach(btn => {
         btn.addEventListener('click', () => {
