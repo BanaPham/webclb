@@ -1,5 +1,5 @@
 import Navigo from "navigo";
-import Trangchu, {Inid, Kenhdangky, Shorts} from "./you.js"
+import Trangchu, {Kenhdangky, Shorts} from "./you.js"
 
 const router = new Navigo("/", {});
 
@@ -26,11 +26,16 @@ router.on("/feed", function(){
     Kenhdangky()
 });
 
-router.on('/watch/:id', ({data}) => {
+router.on('/feed/:id', ({data}) => {
     const videoID = data.id; 
     document.querySelector("#content").innerHTML = `
         <strong class="text-2xl font-bold">Bạn đang xem video có ID là ${videoID}</strong>
+        <button id="Saochep">Click</button>
     `;
+    document.getElementById("Saochep").addEventListener("click", function() {
+        navigator.clipboard.writeText(videoID)
+            .then(() => alert("Đã sao chép ID: " + id))
+    });
 });
 
 router.resolve();
