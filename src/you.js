@@ -61,12 +61,12 @@ function Kenhdangky()
 function Videodaxem()
 {
     document.getElementById("content").innerHTML = `
-        <img class="Anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0510">
-        <img class="Anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0511">
-        <img class="Anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0512">
-        <img class="Anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0513">
+        <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0510">
+        <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0511">
+        <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0512">
+        <img class="anh" style="cursor: pointer; border-radius: 20px; height: 400px; margin: 20px;" src="/public/meo.jpg" alt="" data-id="0513">
     `  
-    const idAnh = document.querySelectorAll(".Anh");
+    const idAnh = document.querySelectorAll(".anh");
     idAnh.forEach(({id}) => {
         const id = this.getAttribute("data-id");
         let idSelector = '#' + id;
