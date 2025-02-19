@@ -45,7 +45,7 @@ function Kenhdangky()
     });
 }
 
-function Inid() {
+function Inid(address) {
     document.querySelector("#content").innerHTML = `
         <h4>Bạn đang xem video có id là :<span id="id-container"></span></h4>
         <button id="Saochep">Click</button>
@@ -57,7 +57,7 @@ function Inid() {
         navigator.clipboard.writeText(id)
             .then(() => alert("Đã sao chép ID: " + id))
     });
-    document.getElementById('id-container').textContent = id;
+    document.getElementById('id-container').textContent = address;
 }
 
 export default Trangchu
