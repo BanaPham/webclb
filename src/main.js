@@ -1,7 +1,7 @@
 import Navigo from "navigo";
 import Trangchu, {Kenhdangky, Shorts} from "./you.js"
 
-const router = new Navigo("/", {});
+const router = new Navigo('/', { strategy: 'history' });
 
 document.addEventListener("click", (event) => {
     const button = event.target.closest("button"); 
